@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Контакты</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="d-flex">
+  <!-- Левое меню -->
+  <div class="bg-dark text-white p-3 d-flex flex-column justify-content-between" style="width: 250px; height: 100vh;">
+    <div>
+      <h4>Меню</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="index.html" class="nav-link text-white">Главная</a></li>
+        <li class="nav-item"><a href="catalog.html" class="nav-link text-white">Каталог</a></li>
+        <li class="nav-item"><a href="category.html" class="nav-link text-white">Категории</a></li>
+        <li class="nav-item"><a href="contacts.html" class="nav-link text-white">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="dropdown mt-auto">
+      <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" href="#" data-bs-toggle="dropdown">
+        <img src="img/нр65о64о.jpg" alt="avatar" width="32" height="32" class="rounded-circle me-2">
+        <strong>Пользователь</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="profile.html">Профиль</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="index.html">Выход</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Контент -->
+  <main class="p-5 flex-grow-1">
+    <h1 class="mb-4">Контакты</h1>
+
+    <div class="row">
+      <!-- Левая часть -->
+      <div class="col-md-6 mb-4">
+        <h4>Наши данные</h4>
+        <p><b>Адрес:</b> г. Москва, ул. Примерная, д. 1</p>
+        <p><b>Телефон:</b> <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+        <p><b>Email:</b> <a href="mailto:info@example.com">info@example.com</a></p>
+        <p><b>Режим работы:</b><br> Пн-Пт: 9:00 - 18:00<br> Сб-Вс: выходные</p>
+
+        <!-- Карта (Google Maps iframe или Яндекс.Карты) -->
+        <div class="mt-3">
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5d0a95af5b5af7b89f6b6f15dff3d2f7f8af8d86f99f9a98769ad5ce2f95d0f6&amp;source=constructor"
+                  width="100%" height="250" frameborder="0"></iframe>
+        </div>
+      </div>
+
+      <!-- Правая часть -->
+      <div class="col-md-6">
+        <h4>Обратная связь</h4>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Ваше имя</label>
+            <input type="text" class="form-control" id="name" placeholder="Введите имя">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Ваш email</label>
+            <input type="email" class="form-control" id="email" placeholder="Введите email">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Сообщение</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Введите сообщение"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    document.querySelectorAll(".nav-link").forEach(link => {
+      const href = (link.getAttribute("href") || "").toLowerCase();
+      if (href === current) link.classList.add("active","bg-primary","text-white","rounded");
+    });
+  });
+</script>
+</body>
+</html>
